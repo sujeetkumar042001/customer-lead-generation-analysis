@@ -1,0 +1,13 @@
+import pandas as pd
+
+df = pd.read_csv("../data/weekly_leads.csv")
+
+df["Conversion_Rate (%)"] = round(
+    (df["Converted_Leads"] / df["Leads_Generated"]) * 100, 2
+)
+
+print("\n===== Weekly Lead Analysis =====\n")
+print(df)
+
+print("\nAverage Conversion Rate:",
+      df["Conversion_Rate (%)"].mean(), "%")

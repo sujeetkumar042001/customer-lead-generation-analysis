@@ -1,0 +1,12 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("../data/weekly_leads.csv")
+df
+df["Conversion_Rate (%)"] = (df["Converted_Leads"] / df["Leads_Generated"]) * 100
+df
+plt.plot(df["Week"], df["Converted_Leads"])
+plt.title("Converted Leads Trend")
+plt.xlabel("Week")
+plt.ylabel("Leads")
+plt.show()

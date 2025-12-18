@@ -1,0 +1,24 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("../data/weekly_leads.csv")
+
+# Leads Generated vs Converted
+plt.figure()
+plt.plot(df["Week"], df["Leads_Generated"], label="Leads Generated")
+plt.plot(df["Week"], df["Converted_Leads"], label="Converted Leads")
+plt.xlabel("Week")
+plt.ylabel("Number of Leads")
+plt.title("Weekly Leads Generated vs Converted")
+plt.legend()
+plt.show()
+
+# Conversion Rate Trend
+df["Conversion_Rate"] = (df["Converted_Leads"] / df["Leads_Generated"]) * 100
+
+plt.figure()
+plt.plot(df["Week"], df["Conversion_Rate"])
+plt.xlabel("Week")
+plt.ylabel("Conversion Rate (%)")
+plt.title("Lead Conversion Rate Trend")
+plt.show()

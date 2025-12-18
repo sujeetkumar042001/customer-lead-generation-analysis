@@ -1,0 +1,10 @@
+"""
+Business Insights from Lead Analysis:
+
+1. Average weekly leads ≈ 700
+2. Average conversion rate ≈ 27%
+3. Best performance observed in Week 6
+4. Faster follow-ups improved conversions
+5. CRM-based tracking is critical for success
+"""
+print("Business insights documented successfully.")
